@@ -5,7 +5,7 @@
     <title>Message Encoder</title>
 
 </head>
-<body style="background-color: antiquewhite">
+<body>
 <label for="text"></label><textarea id="text" name="text"></textarea>
 <br>
 <button id="button" name="button">Encode/Decode</button>
@@ -23,11 +23,20 @@
             },
             success: function (data) {
                 textArea.value = data;
+                const textarea = document.getElementById("text");
+                textarea.select();
+                document.execCommand("Copy");
             }
         });
     });
 </script>
 <style>
+    body {
+        background-color: antiquewhite;
+        width: 100vw;
+        height: 100vh;
+    }
+
     #text {
         width: 100%;
         height: 80vh;
