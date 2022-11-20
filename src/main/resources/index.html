@@ -25,7 +25,9 @@
                 textArea.value = data;
                 const textarea = document.getElementById("text");
                 textarea.select();
-                document.execCommand("Copy");
+                if (data.substring(0, 3) === "$$$") {
+                    document.execCommand("copy");
+                }
             }
         });
     });
