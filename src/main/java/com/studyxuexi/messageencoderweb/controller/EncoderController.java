@@ -11,7 +11,7 @@ public class EncoderController {
     @Autowired
     private EncoderService encoderService;
 
-    @PostMapping("/")
+    @PostMapping("/api/")
     public String index(@RequestParam("text") String text) {
         return encoderService.process(text);
     }
